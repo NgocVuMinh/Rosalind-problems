@@ -6,12 +6,12 @@
 #     Given: A DNA string of length at most 1 kbp in FASTA format.
 #     Return: The position and length of every reverse palindrome in the string having length between 4 and 12. You may return these pairs in any order.
 
-#     !!! NOTICE that the actual dataset that Rosalind gives you looks more like this (so you have to take into account the seperated lines):
+#     !!! NOTICE that the actual dataset that Rosalind gives you is in FASTA format, so it looks something more like this (need to take into account the seperated lines):
 #     >Rosalind_24
 #     TCAATGCATGCGGGTCTATATGCAT
 #     GCGGGTCTATATGCATTCAATGCAT
 #     TAGCTGATCGATCGTGCGATC
-#_____________________ MY SOLUTION ___________________________
+#_____________________________________ MY SOLUTION ________________________________________
 
 
 fas = open('rosalind_revp.txt').read()                      #dealing with fasta format
