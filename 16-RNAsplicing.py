@@ -13,8 +13,8 @@
 
 
 codon = """
-UUU F      CUU L      AUU I      GUU V
-UUC F      CUC L      AUC I      GUC V
+UUU F      CUU L      AUU I      GUU V                          # Rosalind provides the (RNA-to-protein) codon table as a string.
+UUC F      CUC L      AUC I      GUC V                          # converting this string into a dictionary
 UUA L      CUA L      AUA I      GUA V
 UUG L      CUG L      AUG M      GUG V
 UCU S      CCU P      ACU T      GCU A
@@ -32,7 +32,7 @@ UGG W      CGG R      AGG R      GGG G
 """.split()
 trans = dict(zip(codon[0::2], codon[1::2]))
 
-import re
+import re                                                       # dealing with the fasta format
 fas = open("rosalind_splc.txt", 'r').read()
 trim= fas.replace('\n','')
 split = re.split('>',trim)[1:]
@@ -40,15 +40,15 @@ file = []
 for strand in split:
     strand = strand[13:]
     file.append(strand)
-dna = file[0]
+dna = file[0]                                                   # the final list has the dna at index=0, and the rest are introns
 intron = file[1:]
 
-for i in intron:
+for i in intron:                                                # remove introns in dna by replace them with '' (blank)
     dna = dna.replace(i, '')
 
-rna = dna.replace("T", "U")
+rna = dna.replace("T", "U")                                     # translate dna to rna
 
-protein = []
+protein = []                                                    # translate rna to protein
 for i in range(0,len(rna),3):
     if trans[rna[i:i+3]] != 'Stop':
         protein.append(trans[rna[i:i+3]])
