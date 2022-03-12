@@ -9,7 +9,7 @@
 # Return: The total weight of P. Consult the monoisotopic mass table.
 
 # NOTICE: 1. the monoisotopic mass table is provided my Rosalind as a string.
-#         2. the dataset provided my Rosalind has an empty line at the bottom ('\n'), this needs removing
+#         2. the dataset provided my Rosalind has an empty line at the bottom ('\n'), this needs removing.
 
 #________________________________________ MY SOLUTION __________________________________________
 
