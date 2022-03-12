@@ -38,10 +38,10 @@ Y   163.06333"""
 source = source.split()
 masstable = dict(zip(source[0::2],source[1::2]))
 
-protein = open("rosalind_prtm.txt", "r").read()
+protein = open("rosalind_prtm.txt", "r").read().strip()     # strip() removes the last '\n'
 
 weight = 0
-for i in protein[:-1]:
+for i in protein:
     weight += float(masstable[i])
 print(weight)
 
