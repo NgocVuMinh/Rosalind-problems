@@ -10,7 +10,7 @@
 #_____________________________________ MY SOLUTION ________________________________________
 
 
-import re                                                  
+import re                                                  # dealing with fasta format
 fas = open("rosalind_tran.txt", 'r').read()
 trim= fas.replace('\n','')
 split = re.split('>',trim)[1:]
@@ -19,7 +19,7 @@ for strand in split:
     strand = strand[13:]
     file.append(strand)
 
-a, b = file[0], file[1]
+a, b = file[0], file[1]                                     # the two DNA strings are put in a list
 transi = {"A": "G", "G": "A", "C": "T", "T": "C"}
 
 count_transver = 0
@@ -28,7 +28,7 @@ count_transi = 0
 for i in range(len(a)):
     if transi[a[i]] == b[i]:
         count_transi += 1
-    elif a[i] != b[i]:
-        count_transver += 1
+    elif a[i] != b[i]:                  # take a look at the transition/transversion chart of Rosalind: A <-> G and C <-> T are transitions, the rest are transversions
+        count_transver += 1                
     
 print(count_transi/count_transver)
