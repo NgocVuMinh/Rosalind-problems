@@ -1,2 +1,2 @@
 # Rosalind-problems
-Python-based. My solutions to bioinformatic problems on https://rosalind.info/about/.
+Python-based. My solutions to bioinformatic problems on https://rosalind.info/problems/.
