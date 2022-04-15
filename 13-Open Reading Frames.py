@@ -27,7 +27,7 @@ UGC C      CGC R      AGC S      GGC G
 UGA Stop   CGA R      AGA R      GGA G
 UGG W      CGG R      AGG R      GGG G"""
 d1 = rna_table.split()
-rna_codon_table = dict(zip(d1[0::2], d1[1::2]))
+rna_table = dict(zip(d1[0::2], d1[1::2]))
 
 
 fas = open("rosalind_orf.txt", 'r').read()         # process fasta file and convert it to a string
