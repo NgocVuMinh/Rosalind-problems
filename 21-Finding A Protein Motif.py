@@ -42,7 +42,7 @@ def findmotif(accessIDs, motif):
             loc = re.search(match, proteins).start()
             locs.append(loc + 1)
         
-        # re.findall does not count for overlapping, solve this by iterating over the substring of proteins between the found location
+        # re.findall does not count for overlapping, solve this by iterating over the substring of proteins between the found locations
         # e.g: locs = [5, 11, 46], search for the motif again in proteins[5:11] and proteins[11:46]
         for i in range(len(locs)-1): 
             sub = proteins[locs[i]: locs[i+1]]
